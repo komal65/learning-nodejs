@@ -1,0 +1,213 @@
+NODEJS
+
+
+to run node js 
+node .\filename.js
+
+npm use to add functionality 
+refer npm site 
+for that need to import npm packages
+
+ex: in aa.js file
+
+var figlet = require("figlet");
+figlet("INDIA !!", function (err, data) {
+    if (err) {
+      console.log("Something went wrong...");
+      console.dir(err);
+      return;
+    }
+    console.log(data);
+  });
+
+on terminal  
+npm i figlet   --> to install package
+
+
+RouTing 
+ 2 types of routes 
+Main GET and POST
+others PUT PATCH
+
+
+our data should not 
+POST ROUT =====>
+while login or singing up  your data should not display on serach tab of url for safety purpose .
+for sing up ,login register or where 
+
+
+
+-----------------------------------------------------------------------------
+GET ROUT IS VISIBLE IN URL
+POST ROUT IS  NOT IN URL 
+------------------------------------------------------------------------------
+
+
+TO CREATE SERVER BY EXPRESS
+import express by npm i express
+
+
+code in aa.js  file
+const express = require('express')
+const app = express()
+
+app.get('/', function (req, res) {
+  res.send('Hello Komal !!')
+})
+app.listen(3000)
+
+
+
+to run in terminal 
+node .\aa.js
+
+open browser  localhost:3000
+
+
+drwback of these = need to compile command for every change 
+so to avoid these we use
+
+
+
+NODEMON
+
+install on terminal 
+npm i nodemon -g 
+
+-g will install it globally on your device 
+it will install in your windows and be for ever
+
+command to run on terminal 
+
+npx nodemon .\aa.js
+
+
+-----------------------------------------------------------------------------
+
+MIDDLEWARE 
+
+its kind of function in which is called before route
+to perform any task on home page we use middle ware 
+then route called
+
+middlewar call before all routes 
+
+-------------------------------------------------------------------------------
+
+Node Vs Express 
+
+Node is main 
+Express is sub part of node
+
+node has ability to create server by http but it become complex so node use express  which is pakage of node . express  create server easily 
+
+-------------------------------------------------------------------------------
+
+
+Express js =  its a package of nodejs use to create servers , routing  , request handeling 
+
+
+-------------------------------------------------------------------------------
+routing 
+To create route 
+ex = /profile , /about 
+
+
+---------------------------------------------------------------------------
+
+req  => when im getting request from outside or from somebody
+res  => when i want send someting 
+
+-----------------------------------------------------------------------------
+
+Dynamic Routing 
+
+
+some part of route is repeating often and some part is keeps changing SO We need to use Dynamic Routing for that.
+ 
+example synatx
+
+/profile/:username 
+
+where username can be any  name 
+
+:username is called params
+
+ex:
+
+
+
+app.get("/about/:username", function  (req, res) {
+  res.send(`${req.params.username} , Tell me something about Yourself`)
+})
+
+
+--------------------------------------------------------------------------
+
+ejs = express js files
+
+ejs is html kind  which use in backend which has superpower
+
+
+Ejs setup 
+
+1) ejs install
+ npm i ejs
+
+2)configure ejs
+
+app.set("view engine" , "ejs");
+
+3)create views folder
+
+4)create ejs file in that folder
+
+5)send ki jagah render karo ==>
+
+
+while rendering make sure that you put files from views folder and don't mention ejs inside render function 
+
+
+------------------------------------------------------------------------------
+template engine  - kind of markup style which convert into 
+ just  similar to html 
+
+----------------------------------------------------------------------------
+
+Static files - images,stylesheets , frontend js setup karna
+ to create static files setup  follow these steps:
+
+1)create  a folder called public
+
+2)create 3 folders inside it , images, css , js 
+
+3)configure the express static in 
+
+4) understand the path
+
+
+file stuctur 
+
+
+-node_module
+
+-public
+	>images
+	>javascripts	>>=>index.js<>
+	>stylesheets    >>=>index.css
+
+-views
+	>about_us.ejs
+	>index.ejs
+
+
+-script.js
+-package-lock.json
+-package.json
+
+
+--------------------------------------------------------
+
+ERROR Handeling 
+
+

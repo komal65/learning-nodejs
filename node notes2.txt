@@ -1,0 +1,15 @@
+
+flash messages
+
+whenever you seen  ejs pages you need to add some info in it , like alerts,warnings,descriptions  that this all things called flash messages
+
+
+ steps to craete and use flash messages
+
+ st1) install  connect-flash  package
+ npx i connect-flash
+  crete new express-generator app
+   express endgame2 --view=ejs
+ st2)make sure you put connect flash in a app.use function
+ u need to create flash in any router
+ nd try to operate it one any other route
